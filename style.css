@@ -1,0 +1,198 @@
+/* https://www.w3schools.com/css/css3_box-sizing.asp */
+/* basic safety check so padding/width behaves correctly */
+* {
+    box-sizing: border-box;
+}
+
+/* sticky footer setup using this youtube video */
+/* https://www.youtube.com/watch?v=YmI72GTRuqM */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #BE1622;      /* Primary Red */
+    padding: 0.5rem 1.5rem;           /* space inside header */
+}
+
+/* Desktop header */
+
+.desktopHeader {
+    display: flex;
+    justify-content: space-between;   /* logo left, nav right */
+    align-items: center;              /* vertically centre everything */
+    /* width: 100%; */
+}
+
+/* Logo and text */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;      /* space between logo and "Student Shop" */
+}
+
+.brand img {
+    max-height: 60px;      /* controls size of the huge logo */
+    width: auto;           /* keep aspect ratio */
+    max-width: 100%;
+}
+
+.brand-text {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Desktop navigation */
+.myNav {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.navList a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.navList a:hover {
+    text-decoration: underline;
+}
+
+/* Main */
+main {
+    /* flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto; */
+
+    flex: 1 0 auto;     /* same as above comments but more concise*/
+    padding: 2rem 0;    /* space above/below the white box */
+}
+
+.main {
+    background-color: #ffffff;
+    width: 90%;                 /* take most of the width on small screens */
+    max-width: 900px;           /* https://www.w3schools.com/cssref/pr_dim_max-width.php 
+                                   but never get wider than 900px, max width of element*/
+    margin: 0 auto;             /* centre the box horizontally */
+    padding: 2rem;              /* space inside the box */
+    font-size: 1rem;            /* equal to desktop font size */
+}
+
+video, iframe {
+    width: 100%;
+    height: 400px;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+/* footer */
+footer {
+    background-color: #007fb0;
+    padding: 10px;
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    width: 30%;
+    font-size: 13px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.topnav {
+    display: none;
+}
+
+/* https://www.w3schools.com/cssref/atrule_media.php */
+/* Mobile - hide desktop header and show hamburger menu */
+@media (max-width: 700px) {
+    .desktopHeader {
+        display: none;
+    }
+
+    .topnav {
+        display: block;          /* show mobile header */
+        position: relative;
+        width: 100%;
+    }
+
+    /* links hidden until the hamburger menu icon is clicked */
+
+    .topnav #myLinks {
+        display: none;
+        overflow: hidden;            /* keeps floats contained */
+    }
+
+    /* make the links sit next to each other */
+    .topnav #myLinks a {
+        float: left;          /* puts links next to each other - https://stackoverflow.com/questions/32835078/css-div-expand-horizontally-instead-of-vertically */
+        display: block;
+        padding: 14px 30px;
+        color: white;
+    }
+
+    /* Style navigation menu links */
+    .topnav a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        font-size: 17px;     /* 17px or 1.05rem */
+        display: block;
+    }
+
+    /* Style the hamburger menu */
+    .topnav a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 16px 16px;
+    }
+
+    /* https://www.w3schools.com/howto/howto_js_mobile_navbar.asp */
+    /* Add a grey background color on mouse-over */
+    .topnav a:hover {
+        background-color: #c7cbda;
+        color: black;
+    }
+
+    /* Hamburger icon changing colour */
+    .topnav a.icon:hover {
+        background-color: transparent;
+        color: white;
+    }
+
+    .brand img {
+        max-height: 40px;   /* smaller logo on mobile */
+    }
+
+    .brand-text {
+        font-size: 20px;
+    }
+}
