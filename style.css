@@ -289,6 +289,43 @@ footer a:hover {
     margin: 0 0 8px 0;
 }
 
+/* Breadcrumb navigation */
+/* https://www.w3schools.com/howto/howto_css_breadcrumbs.asp */
+
+/* Style the list */
+.breadcrumbs {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+
+/* Display list items side by side */
+.breadcrumbs li {
+  display: inline;
+  font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+.breadcrumbs li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+.breadcrumbs li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+.breadcrumbs li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+
+
 
 
 /* .card button {
