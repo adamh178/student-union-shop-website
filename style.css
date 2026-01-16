@@ -130,9 +130,43 @@ footer a:hover {
     display: none;
 }
 
+/* Tablet / medium view (Lecture 3 + W3Schools suggest ~768px) */
+@media screen and (max-width: 768px) {
+
+    /* Keep desktop header, just tighten it up */
+    header {
+        padding: 0.5rem 1rem;
+    }
+
+    .brand img {
+        max-height: 50px;
+    }
+
+    .brand-text {
+        font-size: 24px;
+    }
+
+    .myNav {
+        gap: 1rem;
+    }
+
+    .main {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    /* Products: shows 2 products - nicer fit on tablet */
+    .productCard {
+        width: 45%;
+        max-width: 260px;
+    }
+}
+
+
 /* https://www.w3schools.com/cssref/atrule_media.php */
 /* Mobile - hide desktop header and show hamburger menu */
-@media (max-width: 700px) {
+/* Mobile view */
+@media screen and (max-width: 600px) {
     .desktopHeader {
         display: none;
     }
@@ -193,6 +227,82 @@ footer a:hover {
     }
 
     .brand-text {
-        font-size: 20px;
+        font-size: 18px;
+    }
+
+    /* Products: 1 product per row on mobile */
+    .productCard {
+        width: 100%;
+        max-width: 320px;
     }
 }
+
+/* PRODUCTS PAGE */
+/* https://www.w3schools.com/howto/howto_css_product_card.asp */
+
+#productList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.pageTitle {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.productCard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 260px;          /* this forces multiple cards per row */
+    text-align: center;
+    font-family: arial;
+    padding: 10px;
+    margin-top: 45px;
+    box-sizing: border-box; /* stops padding breaking width */
+}
+
+.itemImage {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.itemInfo {
+    margin-top: 10px;
+}
+
+.itemName {
+    margin: 0 0 8px 0;
+}
+
+.itemPrice {
+    color: grey;
+    font-size: 22px;
+}
+
+.itemStock,
+.itemDescription {
+    margin: 0 0 8px 0;
+}
+
+
+
+/* .card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+} */
+
+/* .card button:hover {
+  opacity: 0.7;
+} */
