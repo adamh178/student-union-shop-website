@@ -292,40 +292,120 @@ footer a:hover {
 /* Breadcrumb navigation */
 /* https://www.w3schools.com/howto/howto_css_breadcrumbs.asp */
 
-/* Style the list */
+/* Style the list
 .breadcrumbs {
-  padding: 10px 16px;
+  padding: 0;
   list-style: none;
-  background-color: #eee;
+  margin: 0 0 20px 0;
+  font-size: 14px;
 }
 
-/* Display list items side by side */
+ Display list items side by side 
 .breadcrumbs li {
   display: inline;
   font-size: 18px;
 }
 
-/* Add a slash symbol (/) before/behind each list item */
+ Add a slash symbol (/) before/behind each list item 
 .breadcrumbs li+li:before {
   padding: 8px;
   color: black;
   content: "/\00a0";
 }
 
-/* Add a color to all links inside the list */
+ Add a color to all links inside the list 
 .breadcrumbs li a {
   color: #0275d8;
   text-decoration: none;
 }
 
-/* Add a color on mouse-over */
+ Add a color on mouse-over 
 .breadcrumbs li a:hover {
   color: #01447e;
   text-decoration: underline;
+} */
+
+/* Filter setup (adapted from W3Schools filter elements)
+   https://www.w3schools.com/howto/howto_js_filter_elements.asp */
+
+/* hide cards by default when filtering */
+#productList .productCard {
+    display: none;
+}
+
+/* show cards when JS adds this class */
+#productList .productCard.show {
+    display: block;
 }
 
 
+/* show cards when JS adds this class */
+.show {
+    display: block;
+}
 
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Scroll to top button */
+/* https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
+
+#myBtn {
+    display: none;         /* hidden until user scrolls */
+    position: fixed;       /* sticky on screen */
+    bottom: 30px;          /* distance from bottom */
+    left: 30px;            /* LEFT side like teacher example */
+    z-index: 99;
+
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+
+    border: none;
+    outline: none;
+    background-color: #2f4f6f; /* blue circle */
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background-color: #555;
+}
+
+/* View more button for individual items */
+.viewMoreButton {
+    margin-top: 10px;
+    padding: 10px 14px;
+    border: none;
+    cursor: pointer;
+    background-color: #007fb0;
+    color: white;
+    border-radius: 6px;
+}
+
+.viewMoreButton:hover {
+    background-color: #005f85;
+}
 
 
 /* .card button {

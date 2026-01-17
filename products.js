@@ -1,14 +1,73 @@
+// filter products by stock type
+// adapted from W3Schools filter elements example
+// https://www.w3schools.com/howto/howto_js_filter_elements.asp
 
-        // mobile navigation from w3Schools
-        // https://www.w3schools.com/jsref/met_document_getelementbyid.asp
-        function myFunction() {
-            var x = document.getElementById("myLinks");
-            if (x.style.display === "block") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "block";
-            }
+function filterProducts(stockType) {
+
+    var cards, i;
+    cards = document.getElementsByClassName("productCard");
+
+    // if 'all' is selected, show everything
+    if (stockType === "all") {
+        stockType = "";
+    }
+
+    for (i = 0; i < cards.length; i++) {
+
+        // remove the show class from every card first
+        removeClass(cards[i], "show");
+
+        // skip the hidden template card
+        if (cards[i].id === "itemCard") {
+            continue;
         }
+
+        // if card contains the selected stock class, show it
+        if (cards[i].className.indexOf(stockType) > -1) {
+            addClass(cards[i], "show");
+        }
+    }
+}
+
+function addClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++)
+    {
+        if (arr1.indexOf(arr2[i]) == -1)
+        {
+            element.className += " " + arr2[i];
+        }
+    }
+}
+
+function removeClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++)
+    {
+        while (arr1.indexOf(arr2[i]) > -1)
+        {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+    }
+    element.className = arr1.join(" ");
+}
+        
+
+// mobile navigation from w3Schools
+// https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    }
+    else {
+        x.style.display = "block";
+    }
+}
 
     // array indexed as follows: 
     // [0]name, [1]color, [2]price, [3]stock [4]image-src, [5]desc.
@@ -79,14 +138,21 @@
         // writing stock text into the card
         if (stockValue === "good-stock") {
             itemCopy.querySelector('.itemStock').innerHTML = "In stock";
+            itemCopy.classList.add("inStock");
             document.getElementById(value).onclick = webapi(i);
+            // "View more" button (same behaviour as clicking the card)
+            itemCopy.querySelector(".viewMoreButton").onclick = webapi(i);
         }
         else if (stockValue === "last-few") {
             itemCopy.querySelector('.itemStock').innerHTML = "Last few left";
+            itemCopy.classList.add("inStock");
             document.getElementById(value).onclick = webapi(i);
+            // "View more" button (same behaviour as clicking the card)
+            itemCopy.querySelector(".viewMoreButton").onclick = webapi(i);
         }
         else {
             itemCopy.querySelector('.itemStock').innerHTML = "Out of stock";
+            itemCopy.classList.add("outStock");
 
             // differentiate between out of stock and in stock:
             // https://www.w3schools.com/Jsref/prop_style_opacity.asp
@@ -94,13 +160,41 @@
 
             // unable to click out of stock items
             document.getElementById(value).onclick = null;
+            itemCopy.querySelector(".viewMoreButton").onclick = null;
+            itemCopy.querySelector(".viewMoreButton").disabled = true;
         }
 	}
 
 	// hide the original template card (like in the slide: item.style.display = 'none')
     item.style.display = 'none';
-
     
+    filterProducts("all"); // show everything on page load
+
+// scroll to top button logic
+// https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+
+var mybutton = document.getElementById("myBtn");
+
+// show button when user scrolls down
+window.onscroll = function () {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+// when user clicks the button, scroll to top
+function topFunction() {
+    document.body.scrollTop = 0;            // Safari
+    document.documentElement.scrollTop = 0; // Chrome, Firefox, Edge
+}
+
+
 
     // // build the product list (similar to lecture example with ul / li)
     // var ul = document.getElementById("productList");

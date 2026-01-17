@@ -59,16 +59,33 @@
     <main>
         <!-- https://www.w3schools.com/howto/howto_css_product_card.asp -->
         <div class="main">
-            <ul class="breadcrumbs">
+            <!-- breadcrumb navigation -->
+            <!-- https://www.w3schools.com/howto/howto_css_breadcrumbs.asp -->
+            <!-- <ul class="breadcrumbs">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li>Item</li>
-            </ul>
+            </ul> -->
 
             <div class="pageTitle">
                 <h1>Legacy T-Shirts</h1>
                 <p>Old UCLan merchandise at discounted prices.</p>
             </div>
+
+            <!-- filter stock -->
+            <!-- <div class="filterButtons">
+                <button onclick="filterSelection('all')">Show all</button>
+                <button onclick="filterSelection('in')">In stock only</button>
+            </div> -->
+
+            <div id="filterButtons">
+                <button class="btn" onclick="filterProducts('all')">Show All</button>
+                <button class="btn" onclick="filterProducts('inStock')">In Stock</button>
+            </div>
+
+            <!-- <li class="productCard in"> -->
+
+
 
             <!-- This is where we will output the list of products -->
             <!-- Product list container -->
@@ -83,12 +100,17 @@
                         <p class="itemPrice">Price goes here</p>
                         <p class="itemStock">Stock status</p>
                         <p class="itemDescription">Short description goes here</p>
+                        <button class="viewMoreButton" type="button">View More</button>
                     </div>
                 </li>
                 <!-- end template card -->
             </ul>
+
         </div>
     </main>
+    <!-- Scroll to top button (W3Schools style) -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
     <!-- external JavaScript file -->
     <!-- https://www.w3schools.com/tags/att_script_src.asp -->
     <script src="products.js"></script>
