@@ -346,12 +346,12 @@ footer a:hover {
 
 /* Style the buttons */
 .btn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-  font-size: 18px;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 18px;
 }
 
 /* Add a light grey background on mouse-over */
@@ -406,20 +406,3 @@ footer a:hover {
 .viewMoreButton:hover {
     background-color: #005f85;
 }
-
-
-/* .card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-} */
-
-/* .card button:hover {
-  opacity: 0.7;
-} */
