@@ -406,3 +406,45 @@ footer a:hover {
 .viewMoreButton:hover {
     background-color: #005f85;
 }
+
+/* ITEM PAGE */
+/* Simple styling for individual product details page */
+/* Matches layout and spacing used on products page */
+
+.mainItemPage {
+    text-align: center;
+}
+
+#itemImage {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#itemName {
+    margin-top: 20px;
+}
+
+#itemPrice {
+    color: grey;
+    font-size: 22px;
+}
+
+#itemStock {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#itemDescription {
+    margin-top: 15px;
+}
+
+.itemBackLink {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007fb0;
+}
+
+.itemBackLink:hover {
+    text-decoration: underline;
+}
