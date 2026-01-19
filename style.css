@@ -448,3 +448,57 @@ footer a:hover {
 .itemBackLink:hover {
     text-decoration: underline;
 }
+
+#addToCartBtn {
+    border: none;
+    padding: 12px;
+    color: white;
+    background-color: #007fb0;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+#addToCartBtn:hover {
+    opacity: 0.7;
+}
+
+/* CART PAGE */
+/* Simple layout similar to products page */
+
+.mainCartPage {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.cartItem {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 15px;
+    margin-bottom: 15px;
+
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.cartItem img {
+    width: 80px;
+    border-radius: 6px;
+}
+
+.cartItemInfo {
+    flex: 1;
+}
+
+.cartItemName {
+    font-weight: bold;
+}
+
+.cartItemPrice {
+    color: grey;
+    font-size: 18px;
+}

@@ -7,7 +7,7 @@ console.log("Stock:", sessionStorage.getItem("stock"));
 console.log("Description:", sessionStorage.getItem("description"));
 console.log("Image source:", sessionStorage.getItem("src"));
 
-// When page loads, inject data into HTML
+// When page loads, query sessionStorage keys and inject values into named elements
 window.onload = function () {
 
     document.getElementById("itemImage").src = sessionStorage.getItem("src");
@@ -27,7 +27,33 @@ window.onload = function () {
     else {
         document.getElementById("itemStock").innerHTML = "Out of stock";
     }
+    // add to cart button (lecture style onclick handler)
+    document.getElementById("addToCartBtn").onclick = function () {
+
+        // https://www.smashingmagazine.com/2014/02/create-client-side-shopping-cart/
+        // create a simple item object from sessionStorage
+        var cartItem = {
+            name: sessionStorage.getItem("name"),
+            price: sessionStorage.getItem("price"),
+            color: sessionStorage.getItem("color"),
+            stock: sessionStorage.getItem("stock"),
+            description: sessionStorage.getItem("description"),
+            src: sessionStorage.getItem("src")
+        };
+
+        // https://www.freecodecamp.org/news/web-storage-localstorage-vs-sessionstorage-in-javascript/
+        // save item to localStorage, usng JSON.stringify
+        // as it is an object before stored in web storage
+        localStorage.setItem("cartItem", JSON.stringify(cartItem));
+
+        alert("Added to cart");
+
+
+    };
 };
+
+
+
 
 // mobile navigation from w3Schools
 // https://www.w3schools.com/jsref/met_document_getelementbyid.asp
