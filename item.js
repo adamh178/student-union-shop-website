@@ -41,19 +41,22 @@ window.onload = function () {
             src: sessionStorage.getItem("src")
         };
 
+        // get exisiting cart or empty array if nothing
+        var cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // adding new item into the array
+        cart.push(cartItem);
+
         // https://www.freecodecamp.org/news/web-storage-localstorage-vs-sessionstorage-in-javascript/
-        // save item to localStorage, usng JSON.stringify
+        // save updated array into localStorage, usng JSON.stringify
         // as it is an object before stored in web storage
-        localStorage.setItem("cartItem", JSON.stringify(cartItem));
+        localStorage.setItem("cart", JSON.stringify(cart));
 
+        // when item added to cart, automatically taken to cart page
         alert("Added to cart");
-
-
+        window.location.href = "cart.html";
     };
 };
-
-
-
 
 // mobile navigation from w3Schools
 // https://www.w3schools.com/jsref/met_document_getelementbyid.asp

@@ -193,26 +193,3 @@ function topFunction() {
     document.body.scrollTop = 0;            // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, Edge
 }
-
-
-
-    // // build the product list (similar to lecture example with ul / li)
-    // var ul = document.getElementById("productList");
-
-	// for (var i = 0; i < tshirts.length; i++) {
-	// 	var value = "item" + i; // unique id for each product
-
-	// 	ul.innerHTML +=
-	// 		"<li id='" + value + "' class='productCard'>" +
-	// 			"<img class='productImage' src='" + tshirts[i][4] + "' alt='" + tshirts[i][0] + " " + tshirts[i][1] + "'>" +
-	// 			"<h2 class='itemHeading'>" + tshirts[i][0] + " (" + tshirts[i][1] + ")</h2>" +
-	// 			"<p class='itemPara'>Price: " + tshirts[i][2] + "</p>" +
-	// 		"</li>";
-	// }
-
-
-    // attach the click handler to each generated item (lecture Step 4)
-    // for (var i = 0; i < tshirts.length; i++) {
-    //     var value = "item" + i;
-    //     document.getElementById(value).onclick = webapi(i);
-    // }
